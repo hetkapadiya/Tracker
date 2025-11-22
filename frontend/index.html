@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Habit Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Habit Tracker</h1>
+      <p>Track your habits daily, see stats and sync to Google Calendar.</p>
+    </header>
+
+    <main class="app-main">
+      <section class="left-panel">
+        <div class="card">
+          <h2>Habits</h2>
+          <form id="habit-form" class="habit-form">
+            <input
+              type="text"
+              id="habit-name"
+              placeholder="New habit name..."
+              required
+            />
+            <button type="submit">Add Habit</button>
+          </form>
+          <ul id="habit-list" class="habit-list"></ul>
+        </div>
+
+        <div class="card">
+          <div class="calendar-header">
+            <button id="prev-month">&lt;</button>
+            <h2 id="calendar-title"></h2>
+            <button id="next-month">&gt;</button>
+          </div>
+          <div class="calendar-legend">
+            <span>Selected habit:
+              <strong id="selected-habit-name">None</strong>
+            </span>
+            <span class="legend-box done-box"></span> <span>Done</span>
+            <span class="legend-box not-done-box"></span> <span>Not done</span>
+          </div>
+          <div id="calendar-grid" class="calendar-grid"></div>
+        </div>
+      </section>
+
+      <section class="right-panel">
+        <div class="card">
+          <h2>Overview</h2>
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-label">Total Habits</span>
+              <span class="stat-value" id="stat-total-habits">0</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Today Completed</span>
+              <span class="stat-value" id="stat-today-completed">0</span>
+            </div>
+            <div class="stat">
+              <span class="stat-label">Completion (Last 7 days)</span>
+              <span class="stat-value" id="stat-last7">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Progress (Last 30 days)</h2>
+          <canvas id="progress-chart"></canvas>
+        </div>
+
+        <div class="card">
+          <h2>Google Calendar</h2>
+          <p id="google-status">Checking...</p>
+          <button id="connect-google">Connect Google Calendar</button>
+          <button id="sync-habit">Sync selected habit</button>
+          <p class="small-note">
+            Sync creates all-day events for days where the selected habit is marked done.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Data</h2>
+          <button id="export-data">Export JSON</button>
+          <button id="clear-data">Clear All Data</button>
+          <textarea id="data-output" readonly></textarea>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

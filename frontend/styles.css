@@ -1,0 +1,307 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.app-header p {
+  margin-top: 0.3rem;
+  color: #9ca3af;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 1rem;
+}
+
+.card {
+  background: #020617;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: 1px solid #1f2937;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+/* Habit form */
+
+.habit-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.habit-form input {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.habit-form button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  border: none;
+  background: #22c55e;
+  color: #022c22;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Habit list */
+
+.habit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.habit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.5rem;
+  margin-bottom: 0.3rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  background: #020617;
+  border: 1px solid transparent;
+}
+
+.habit-item.active {
+  border-color: #22c55e;
+  background: #022c22;
+}
+
+.habit-name {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.habit-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+}
+
+.habit-actions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.habit-actions button {
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: #fee2e2;
+}
+
+.rename-btn {
+  background: #38bdf8;
+  color: #e0f2fe;
+}
+
+/* Calendar */
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.calendar-header button {
+  border: none;
+  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.legend-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 0.2rem;
+  border: 1px solid #4b5563;
+}
+
+.done-box {
+  background: #22c55e;
+}
+
+.not-done-box {
+  background: #111827;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.calendar-cell {
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.2rem;
+  min-height: 40px;
+  text-align: center;
+  border: 1px solid #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.calendar-cell.disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.calendar-cell.today {
+  border-color: #38bdf8;
+}
+
+.calendar-cell.done {
+  background: #16a34a;
+}
+
+.calendar-cell.not-done {
+  background: #111827;
+  color: #9ca3af;
+}
+
+/* Stats */
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0.4rem;
+  border-radius: 0.4rem;
+  background: #020617;
+  border: 1px solid #1f2937;
+  font-size: 0.9rem;
+}
+
+.stat-label {
+  color: #9ca3af;
+}
+
+.stat-value {
+  font-weight: 600;
+}
+
+/* Data & Google buttons */
+
+#data-output {
+  width: 100%;
+  margin-top: 0.5rem;
+  min-height: 120px;
+  border-radius: 0.4rem;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  resize: vertical;
+}
+
+#export-data,
+#clear-data,
+#connect-google,
+#sync-habit {
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-right: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+#export-data {
+  background: #4ade80;
+  color: #052e16;
+}
+
+#clear-data {
+  background: #f97316;
+  color: #1f2933;
+}
+
+#connect-google {
+  background: #3b82f6;
+  color: #e5efff;
+}
+
+#sync-habit {
+  background: #22c55e;
+  color: #022c22;
+}
+
+.small-note {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.4rem;
+}
+
+/* Responsive */
+
+@media (max-width: 880px) {
+  .app-main {
+    grid-template-columns: 1fr;
+  }
+}
