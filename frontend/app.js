@@ -1,7 +1,7 @@
 // ---------------------------
 // Config
 // ---------------------------
-const BACKEND_URL = "http://localhost:4000";
+const BACKEND_URL = "https://tracker-d08p.onrender.com";
 
 // ---------------------------
 // Storage
@@ -481,3 +481,4 @@ function init() {
 }
 
 init();
+
