@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 // Allow frontend calls
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "https://yourstracker.netlify.app/",
+    origin: process.env.FRONTEND_URL || "https://yourstracker.netlify.app",
     credentials: true,
   })
 );
@@ -134,4 +134,5 @@ function formatDateUTC(date) {
 app.listen(PORT, () => {
   console.log(`Backend running on http://localhost:${PORT}`);
 });
+
 
